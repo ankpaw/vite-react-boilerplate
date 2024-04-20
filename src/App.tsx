@@ -12,8 +12,8 @@ import {
   BrowserRouter as Router,
   Routes,
 } from "react-router-dom";
-import Navigation from "./components/Navigation/Navigation";
-import Home from "./routes/Home/Home";
+import Navigation from "@components/Navigation/Navigation";
+import Home from "@routes/Home/Home";
 
 export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
