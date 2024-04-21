@@ -1,7 +1,7 @@
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import styles from "./Navigation.module.scss";
-import { IconButton, Typography, useTheme} from "@mui/material";
+import { IconButton, Typography, useTheme } from "@mui/material";
 import { useContext } from "react";
 import { ColorModeContext } from "../../App";
 import { Link } from "react-router-dom";
@@ -13,7 +13,9 @@ const Navigation = () => {
   return (
     <nav className={styles["navbar"]}>
       <div className={styles["logo"]}>
-        <Typography variant="h3">Ankit Pawar</Typography>
+        <Typography variant="h3" color={"primary"}>
+          Ankit Pawar
+        </Typography>
       </div>
       <div className={styles["links"]}>
         <ul>

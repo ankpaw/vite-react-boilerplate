@@ -1,4 +1,4 @@
-import { createContext, useMemo, useState } from "react";
+import { Suspense, createContext, lazy, useMemo, useState } from "react";
 import styles from "./App.module.scss";
 import {
   Container,
@@ -13,8 +13,8 @@ import {
   Routes,
 } from "react-router-dom";
 import Navigation from "@components/Navigation/Navigation";
-import Home from "@routes/Home/Home";
-
+import Footer from "@components/Footer/Footer";
+const Home = lazy(() => import("@routes/Home/Home"));
 export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
 const Layout = () => {
@@ -22,6 +22,7 @@ const Layout = () => {
     <Container maxWidth="xl" className={styles["container"]}>
       <Navigation />
       <Outlet />
+      <Footer />
     </Container>
   );
 };
@@ -55,7 +56,14 @@ function App() {
           <Router>
             <Routes>
               <Route path="/" element={<Layout />}>
-                <Route index element={<Home />} />
+                <Route
+                  index
+                  element={
+                    <Suspense>
+                      <Home />
+                    </Suspense>
+                  }
+                />
               </Route>
             </Routes>
           </Router>
