@@ -1,13 +1,14 @@
-import { Typography } from "@mui/material";
-import styles from "./Footer.module.scss";
-const Footer = () => {
+import { Typography } from '@mui/material';
+import styles from './Footer.module.scss'; // Importing styles from SCSS file
+
+function Footer() {
   return (
-    <footer className={styles["footer"]}>
-      <Typography variant="body1" color={"primary"}>
-        &copy; {`${APP_NAME} ${new Date().getFullYear()}`}
+    <footer className={styles.footer}> {/* Applying the className from SCSS */}
+      <Typography variant="body1" color="textSecondary">
+        &copy; {new Date().getFullYear()} {APP_NAME}. All rights reserved.
       </Typography>
     </footer>
   );
-};
+}
 
 export default Footer;

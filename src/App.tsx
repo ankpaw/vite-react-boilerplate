@@ -19,11 +19,13 @@ export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
 const Layout = () => {
   return (
-    <Container maxWidth="xl" className={styles["container"]}>
+    <>
       <Navigation />
-      <Outlet />
+      <Container maxWidth="xl" className={styles["container"]}>
+        <Outlet />
+      </Container>
       <Footer />
-    </Container>
+    </>
   );
 };
 

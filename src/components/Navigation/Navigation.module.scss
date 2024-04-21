@@ -1,11 +1,14 @@
 .navbar {
     display: flex;
-    justify-content: space-between;
 
     .links {
         ul {
             list-style: none;
             display: flex;
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
         }
     }
 }
